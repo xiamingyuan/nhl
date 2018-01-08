@@ -1,0 +1,470 @@
+/*大背景色*/
+.ui-layout-background {
+    background-color: #efefef;
+}
+
+/*特定container背景色*/
+.layout-container-background {
+    background-color: #ffffff;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+}
+
+/*资讯管理form内容定位*/
+.consult-form-position {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 10px;
+}
+
+/*表单布局样式开始*/
+.form-default .form-inline {
+    display: inline-block;
+}
+
+.form-default .form-inline > .form-group {
+    float: left;
+    display: block;
+}
+
+/*表单布局样式结束*/
+
+/*表单中有错误提示的text高度*/
+.form-default .form-inline .text-error-height {
+    min-height: 47px;
+}
+
+/*表单中默认的text高度*/
+.form-default .form-inline .text-label-default {
+    min-height: 40px;
+}
+
+.form-default .form-inline .control-label {
+    width: 80px;
+    text-align: right;
+    float: left;
+    cursor: default;
+}
+/*表单中默认标题开始*/
+.form-default .form-inline .control-smaller-label {
+    width: 80px;
+    text-align: right;
+    float: left;
+    margin-top: 1px;
+    cursor: default;
+}
+/*标题稍长些*/
+.form-default .form-inline .control-default-label {
+    width: 120px;
+    text-align: right;
+    float: left;
+    margin-top: 1px;
+    cursor: default;
+}
+/*标题最长*/
+.form-default .form-inline .control-larger-label {
+    width: 150px;
+    text-align: right;
+    float: left;
+    margin-top: 1px;
+    cursor: default;
+}
+/*表单中标题结束*/
+
+/*解决标题后元素紧贴标题*/
+.form-default .form-inline .control-label-after {
+    margin: 0;
+}
+/*表单中验证错误开始*/
+.error-shorter-info,.form-inline .error-shorter-info,.css-form .error-shorter-info{
+    font-size: 12px;
+    color:#A94442;
+    margin-left: 80px;
+}
+.error-default-info,.form-inline .error-default-info,.css-form .error-default-info{
+    font-size: 12px;
+    color:#A94442;
+    margin-left: 120px;
+}
+.error-longer-info,.form-inline .error-longer-info,.css-form .error-longer-info{
+    font-size: 12px;
+    color:#A94442;
+    margin-left: 150px;
+}
+/*表单中验证错误结束*/
+/*表单中标题开始*/
+
+/*表单中单复选框开始*/
+.form-default .form-inline .checkbox-group,.form-default .form-inline .radio-group {
+    margin-right: 10px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+/*带有错误提示的单复选框高度*/
+.form-default .form-inline .checkbox-error-height {
+    min-height: 45px;
+}
+
+/*单复选框上边距*/
+.form-default .form-inline .checkbox-group input[type='checkbox'],.form-default .form-inline .radio-group input[type='radio'] {
+    margin-top: 0;
+}
+
+/*文字与单复选框间距*/
+.form-default .form-inline .checkbox-group .checkbox-text,.form-default .form-inline .radio-group .radio-text {
+    margin-left: -3px;
+}
+
+/*表单中复选框结束*/
+
+/*表单中文本框开始*/
+.form-default .form-inline .textarea-default {
+    resize: none;
+    padding: 4px 6px;
+    height: 120px;
+}
+
+/*带有错误提示的文本框高度*/
+.form-default .form-inline .textarea-error-height {
+    min-height: 150px;
+}
+
+/*表单中编辑和表单父元素*/
+.form-default .textarea-inline, .form-default .textarea-inline .textarea-group, .form-default .table-inline, .form-default .table-inline .table-group {
+    width: 100%;
+}
+
+.form-default .form-inline .xheditor-textarea-default {
+    min-width: 568px;
+    width: 75%;
+    height: 260px;
+}
+
+/*编辑器后的按钮*/
+.xheditor-after-btn {
+    height: 34px;
+}
+
+/*表单中文本框结束*/
+
+/*咨询管理中添加编辑素材弹出层样式开始*/
+/*文章列表样式*/
+.fodder-modal .fodder-grid {
+    overflow-y: auto;
+    width: 850px;
+}
+
+/*图片列表样式*/
+.image-modal .image-list {
+    overflow-y: auto;
+    width: 915px;
+    height: 500px;
+}
+
+.image-modal .imgtotal {
+    height: 500px;
+}
+
+.image-modal .imgtotal li {
+    height: 190px;
+    width: 280px;
+    float: left;
+    list-style-type: none;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0 0 0 18px;
+}
+
+.image-modal .imgtotal li img {
+    border-radius: 6px;
+    height: 170px;
+    width: 280px;
+    cursor: pointer;
+}
+
+/*共有**个图片显示*/
+.image-modal .image-total-number {
+    margin-left: 12px;
+}
+
+/*咨询管理中添加编辑素材弹出层样式结束*/
+/*带有标题的table样式开始*/
+table.edit-table {
+    margin-left: 0;
+    min-width: 568px;
+    width: 87%;
+    border: 1px solid #DDDDDD;
+}
+
+table.edit-table thead tr th {
+    background-color: #F3F3F3;
+    position: static;
+}
+
+/*表单中表格内容居中*/
+table.edit-table thead tr th, table.edit-table tbody tr td {
+    text-align: center;
+    border: 1px solid #DDDDDD;
+    padding: 8px;
+    position: static;
+}
+
+/*带有标题的table样式结束*/
+
+/*无标题的无边框table样式开始*/
+.table-list tr td {
+    border: 0;
+    padding: 5px;
+}
+
+.table-list .label-td {
+    width: 80px;
+    text-align: right;
+}
+
+/*表格中iframe元素*/
+.table-list .td-iframe {
+    height: 300px;
+}
+
+.table-list .td-iframe iframe {
+    min-width: 570px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #DDDDDD;
+}
+
+/*编辑历史表格*/
+.table-list .edit-table {
+    width: 100%;
+}
+
+/*无标题的table样式结束*/
+
+/*咨询管理医保,健康,名医,医院添加编辑图片开始*/
+.dynamic-form-default .form-inline .img-error {
+    margin-left: 10px;
+}
+
+.dynamic-form-default .form-inline .img-position-height {
+    height: 150px;
+    margin-top: -8px;
+}
+
+.icon-position-height {
+    margin-top: -8px;
+}
+
+.dynamic-form-default .form-inline .img-size {
+    /*max-height: 150px;*/
+    /*max-width: 225px;*/
+    height: 150px;
+    width: 270px;
+}
+
+.detail-img-size {
+    /*max-height: 150px;*/
+    /*max-width: 225px;*/
+    height: 150px;
+    width: 270px;
+}
+
+/*图标大小*/
+.dynamic-form-default .form-inline .icon-size {
+    /*max-height: 110px;*/
+    /*max-width: 110px;*/
+    height: 88px;
+    width: 88px;
+}
+
+.detail-icon-size {
+    /*max-height: 110px;*/
+    /*max-width: 110px;*/
+    height: 88px;
+    width: 88px;
+}
+
+.dynamic-form-default .form-inline .textarea-default {
+    resize: none;
+    padding: 4px 6px;
+    height: 170px;
+}
+
+/*带有错误提示的文本框高度*/
+.dynamic-form-default .form-inline .textarea-error-height {
+    min-height: 200px;
+}
+
+/*素材按钮下边距*/
+.dynamic-form-default .fodder-btns {
+    margin-bottom: 5px;
+}
+
+/*摘要输入框样式*/
+/*咨询管理医保,健康,名医,医院添加编辑图片结束*/
+
+/*表单中标题和较短文字居中显示*/
+.form-default .form-inline .span-info-center {
+    text-align: left;
+    margin-left: 0;
+}
+
+/*全局样式*/
+/*清除浮动样式*/
+.clear-both {
+    clear: both;
+}
+
+/*disnabled的输入框样式*/
+input[disabled] {
+    cursor: text !important;
+    background-color: #FFFFFF !important;
+}
+input[readonly] {
+    cursor: text !important;
+    background-color: #FFFFFF !important;
+}
+/*时间控件input样式*/
+.datepicker-input{
+    height: 24px;padding: 0px 6px;width:90px;
+}
+.datetimepicker-input{
+    height: 24px;padding: 0px 6px;width:120px;
+}
+.datepicker-clear,.datetimepicker-clear{
+    position: absolute;right: 5px;top: 0;bottom: 0; height: 14px; margin: auto;font-size: 14px; cursor: pointer;color: #ccc;
+}
+/*label标题*/
+.label-title-default {
+    cursor: text;
+}
+/*带有时间选择器的input,如政策法规添加和编辑页开始*/
+input.reset-date-input{
+    width:100px !important;
+    cursor: text !important;
+    height: 16px;
+    padding: 4px 6px !important;
+}
+span.date-error-info{
+    font-size: 12px;
+    margin-left: 20px;
+    color:#A94442;
+}
+/*时间控件取消按钮样式调整*/
+.form-datetime .datepicker-input{border-radius: 4px !important;font-size: 12px !important;}
+.form-datetime .datepicker-input-large{border-radius: 4px !important;font-size: 12px !important;width:130px}
+.form-datetime .add-icon-calendar{
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+.form-datetime .add-on{
+    background-color: transparent;
+    border:none;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+}
+.form-datetime .add-on i, .form-datetime .add-on i{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Glyphicons Halflings';
+    color: #ccc;
+    line-height: 1;
+}
+.form-datetime .icon-remove:before{content: "\e088";line-height: 19px;}
+/*带有时间选择器的input,如政策法规添加和编辑页结束*/
+/*基础信息-医院管理和药店管理*/
+.basicInfoInput {
+    margin-bottom: 0px !important;
+}
+
+.basicInfoTr {
+    height: 56px !important;
+}
+
+.basicInfoImg {
+    height: 96px;
+    width: 96px;
+    margin-top: 6px;
+}
+
+.basicInfoTextarea {
+    resize: none;
+    padding: 4px 6px;
+    height: 330px;
+    width: 98.5%
+}
+
+.basicInfoError {
+    font-size: 12px;
+    color: #A94442;
+    position: absolute;
+    bottom: -3px;
+}
+
+/*基础信息-医院管理和药店管理结束*/
+
+/*资讯管理-建议span位置*/
+.adviceSpan {
+    position: relative;
+    top: 1px;
+}
+
+/*表单中select样式*/
+.form-select{
+    height: 25px;width: 145px;padding:0
+}
+
+/*弹层form样式*/
+.modal .modal-form-position{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 25px;
+    padding-top: 0;
+}
+/*保存时服务返回错误信息*/
+.modal .modal-server-error{
+    display: inline-block;
+    width:100%;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+    font-size: 14px;
+    color: #A94442;
+}
+/*input宽度*/
+.modal .form-default .form-inline .input-default-width{
+    width:150px;
+}
+.modal .form-default .form-inline .input-larger-width{
+    width:356px;
+}
+/*数据以label显示*/
+.modal .form-default .form-inline .data-label-height{
+    min-height: 25px;
+}
+/*弹出层grid 单选框居中*/
+div.ui-grid-cell input[type="radio"]{width: auto;}
+
+/*详情页中小标题*/
+.detail-small-title{
+    margin: 10px 0 5px;
+}
+.detail-small-title span{
+    margin-left: 2px;
+}

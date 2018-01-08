@@ -1,0 +1,97 @@
+html,body,ul,li,p,div{padding: 0;margin: 0;}
+.main-top-span{height: 48px; line-height: 48px; margin: 0; padding: 0; font-size: 20px; font-weight: 700; color: #f5f5f5; display: inline-block; font-family: 'Microsoft YaHei'; clear: both;}
+.main-top-span .main-top-logo, .main-top-span .main-top-title, .main-top-span .main-top-version{float: left;}
+.main-top-span .main-top-logo{width: 34px; height: 34px; margin: 7px 3px 7px 10px;}
+.main-top-span .main-top-title{padding: 0 5px;}
+.main-top-span .main-top-version{-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; background: #ec733e; padding: 0 5px; margin-top: 10px; font-size: 10px; line-height: 15px;}
+.x_single_listitem{cursor: pointer;color: #000;}
+.x_single_listitem:hover{background-color: #EAEAEA;}
+.x_single_listitem .fa{padding: 0 8px; font-size: 14px;}
+.suspendBtn *{color: #f0f0f0;}
+.suspendBtn .x-btn-wrap-default-toolbar-small.x-btn-arrow-right:after{color: #f0f0f0;}
+.x_single_listitem a{color: #000;text-decoration: none;}
+.x_single_listitem a:hover{color: #000;text-decoration: underline;}
+.x-treelist-item-expandable>*>*>.x-treelist-item-expander, .x-treelist-item-icon{display: list-item !important;}/*set left nav ui*/
+.x-column-header-text{text-align: center;}/*set grid header text align*/
+.x-grid-cell-inner a{text-decoration: none;}/*set link css in the grid*/
+/*表格选中显示边框*/
+.x-grid-item-focused .x-grid-cell-inner:before{border:none;}
+.x-grid-row-checker:focus{outline: none;}
+/*表格title 字体大小*/
+.x-panel-header-title-default, .x-window-header-title-default{font-size: 12px;font-weight:400;}
+/*导航折叠菜单按钮*/
+.main-left-panel .x-toolbar-default{background-color: #3479a7;}
+/*翻页数字上移*/
+.x-webkit .x-form-text{height: calc(100% + 0px);}
+.x-grid-cell a{color: #6b747e;}
+.x-grid-cell a:hover, .x-grid-cell a:focus {
+    color: #005580;
+    text-decoration: underline;
+}
+/*隔行换色*/
+.x-grid-item-alt {
+    background-color:#f3f3f3;
+}
+.x-grid-row td,.x-grid-summary-row td{
+    line-height:24px;
+}
+/*错误信息*/
+#errorInfor .x-form-display-field-default{
+    color: #f00;
+}
+
+.detailsForm tr td:nth-child(2n+1){
+    background-color: #fafafa;
+    width:10%;
+    text-align:right;
+}
+.detailsForm tr td:nth-child(2n){
+    background-color: #ffffff;
+    width:15%;
+}
+.detailsForm table{
+    border: 1px solid #ddd;
+    border-collapse: separate;
+    border-left: 0;
+}
+.detailsForm table th,.detailsForm table td{
+    padding: 5px;
+    line-height: 20px;
+    text-align: left;
+    background: #FFF;
+    /* vertical-align: top; */
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.cis-pagingtoolbar-panel{background-color: #efefef;}
+
+
+/*清除浮动代码*/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+/*member 列表详情页*/
+.family-content{
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    height: auto;
+    padding: 10px;
+    margin:10px auto;
+}
+.family-content .shimingrenzheng{float:left;}
+.family-content .pics{float:right;border:1px solid #ccc;padding:5px;}
+.family-content .pics img{vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+}
+.family-content .shimingrenzheng span.colors{
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+    color: #6b747e;
+    margin-right: 10px;
+    height: 30px;
+    float: left;
+}

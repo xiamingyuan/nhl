@@ -1,0 +1,10 @@
+
+<i ng-show="item.hasChild">
+    <a href="javascript:;"><i class="glyphicon {{item.isPlus ? 'glyphicon-plus-sign' : 'glyphicon-minus-sign'}}"  ng-click="checkTreeClick(item)"></i></a>
+</i>
+<!--ng-show="item.isHasChild==1"-->
+<!--ng-style="{true: 'background-color:red', false: 'background-color:yellow'}[{{item.isActive}}]"   ng-class="{true: 'myclass', false: 'chageclss'}[{{item.isActive}}]" -->
+<a href="javascript:void(0)"  ng-click="createShow(item)"><span style="color:black"  ng-class='{selected:item.isChecked}'>{{item.name}}</span> </a>
+<ul style="font-size: 15px;margin-left:5px; list-style: none;">
+    <li  style="margin-left:29px;" ng-repeat="item in item.childData.data" ng-include="'scripts/controllers/city/tree_item_renderer.html'"></li>
+</ul>

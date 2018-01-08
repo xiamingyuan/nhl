@@ -1,0 +1,194 @@
+/*layout结构样式定义开始*/
+.layout-domain{
+    background-color: #efefef;
+}
+.layout-domain .grid-container{
+    background-color:white;
+    overflow: hidden;
+    border-bottom:1px solid #e4e4e4;
+}
+/*layout结构样式定义结束*/
+/*list页面中搜索条件样式调整开始*/
+.search-table{
+    width:100%;
+    min-width: 330px;
+    overflow: auto;
+}
+.search-table .form-inline{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.search-table .form-group{
+    display: block;
+    float: left;
+    margin-right: 10px;
+    line-height: 28px;
+    margin-bottom: 5px;
+}
+.search-table .form-group .control-label{
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    cursor: default;
+    height: 26px;
+    line-height: 26px;
+}
+.search-table .search-options-td{
+    padding-left: 10px;
+}
+.search-table .search-options-td select{
+    margin-top: -2px;
+}
+.search-table .search-btns-td{
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+/*list页面中搜索条件样式调整结束*/
+/*表格样式开始*/
+.grid-container .grid-top-setting{
+    width: 100% !important;
+    position: absolute !important;
+    left:0 !important;
+    bottom: 0 !important;
+    right:0 !important;
+}
+.grid-container .grid-top-setting .grid-size{
+    width:100%;
+    height:100%;
+}
+/*表格样式结束*/
+/*分页样式开始*/
+.page-container .pull-left{
+    height: 28px;
+    margin-top: 3px;
+    line-height: 28px;
+}
+.page-container .page-index{
+    height:26px;
+    margin-top: 4px;
+}
+.page-container .page-num-input{
+    height: 16px;
+    padding: 5px 6px;
+    margin: 0;
+    margin-top: 3px !important;
+}
+.page-container .btn-go{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 3px;
+}
+/*分页样式结束*/
+/*二级页面底部操作按钮样式开始*/
+.second-btns-group{
+    background-color: #efefef;
+}
+/*page-btns-group类表示既有分页也有二级按钮形式*/
+.second-btns-group .pull-left,.second-btns-group .pull-right,.page-btns-group .pull-left,.page-btns-group .pull-right{
+    padding:0;
+}
+.second-btns-group .pull-left,.page-btns-group .pull-left{
+    padding-left: 5px;
+}
+.second-btns-group .pull-right,.page-btns-group .pull-right{
+    padding-right: 5px;
+}
+.second-btns-group .btn{
+    margin-top: 3px;
+}
+.second-btns-group > .pull-right{
+    height: 34px !important;
+    margin-top:0 !important;
+}
+.second-btns-group .page-index{
+    margin-top: 3px !important;
+}
+.second-btns-group .second-modal-page .pull-right .page-num-input{
+    margin-top: 2px !important;
+}
+.second-btns-group .btn-go{
+    margin-top: 2px !important;
+}
+    /*消息发布中弹出层底部按钮组和分页组合样式*/
+.second-modal-btns{
+    height:34px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background-color: #efefef;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    width:100%;
+}
+.second-modal-btns .second-modal-page{
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:110px;
+    height:34px;
+    background-color: #efefef;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.second-modal-btns .pull-left{
+    margin-top: 0 !important;
+}
+.second-modal-btns .page-num-input{
+    margin-top: 1px !important;
+}
+.second-modal-btns .pull-right{
+    height: 33px;
+    margin-top:1px;
+    background-color: #efefef;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding-right: 5px;
+}
+.second-modal-btns .btn,.second-modal-btns .btn+.btn{
+    margin-bottom: 0;
+    margin-top: 3px;
+}
+/*特殊页面样式如:用户提取详情*/
+.second-btns-group .pull-left span{
+    display: inline-block;
+    height: 28px;
+    margin-top: 3px;
+    line-height: 28px;
+}
+/*评价查看分页样式*/
+.page-container .grid-page-position {
+    position: absolute;
+    left:0;
+    top:0;
+    bottom: 0;
+    right:55px;
+}
+/*消息发布弹出层重新定义modal-body样式*/
+.reset-modal-body{
+    margin:0;
+    padding:0;
+    max-height: none;
+}
+/*二级页面底部操作按钮样式结束*/
+/*分页按钮*/
+.pagination ul>li .page-link{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    line-height: 24px;
+    padding: 0px;
+}
+.pagination ul>li .page-first-last{
+    font-size: 16px;
+}
+/*弹出层查询区域样式*/
+.modal-body-search{
+    border:0;
+    height:40px;
+    margin:0 16px;
+    line-height: 40px;
+    position: relative;
+}

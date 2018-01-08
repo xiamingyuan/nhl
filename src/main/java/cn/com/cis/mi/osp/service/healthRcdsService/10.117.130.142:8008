@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="HealthApp" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="HealthApp" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="HealthApp">
+      <s:element name="GetMedicalRecords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Identity_No" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMedicalRecordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMedicalRecordsResult" type="tns:MedicalRecordList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MedicalRecordList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetMedicalRecords" type="tns:ArrayOfMedicalRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMedicalRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MedicalRecord" nillable="true" type="tns:MedicalRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MedicalRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Dept" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Disease" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Hospital" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDetailMedicalRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Identity_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailMedicalRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDetailMedicalRecordResult" type="tns:ComMedicalList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ComMedicalList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetComMedicalList" type="tns:ArrayOfComMedical" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfComMedical">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ComMedical" nillable="true" type="tns:ComMedical" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ComMedical">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveDiseaseRecordRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:AppDiseaseRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AppDiseaseRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DISEASE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="USERID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLINICTIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HOSPITALID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HOSPITALNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPTID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPTNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOCTORNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RESULT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIRSTVISIT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CREATED_TIME" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RE_MARK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MODIFY_FLAG" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveDiseaseRecordRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveDiseaseRecordRecordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelDiseaseRecordRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:AppDiseaseRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelDiseaseRecordRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelDiseaseRecordRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRecordHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modelList" type="tns:ArrayOfAppRecordHistory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAppRecordHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AppRecordHistory" nillable="true" type="tns:AppRecordHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AppRecordHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="USERID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RECORD_TYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RECORD_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RECORD_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ROUTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RECORDED_TIME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CREATED_TIME" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RE_MARK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MODIFY_FLAG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DISEASE_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveRecordHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveRecordHistoryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHomeInfoEntitys">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Identity_No" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHomeInfoEntitysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHomeInfoEntitysResult" type="tns:HomeInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HomeInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BodyContentObjects" type="tns:BodyContent" />
+          <s:element minOccurs="0" maxOccurs="1" name="AllerObjectss" type="tns:AllergiesList" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChronicObjectss" type="tns:ChronicDiseaseList" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiseaseRiskObjectss" type="tns:DiseaseRisksList" />
+          <s:element minOccurs="0" maxOccurs="1" name="FamilyObjectss" type="tns:FamilyHistoryList" />
+          <s:element minOccurs="0" maxOccurs="1" name="HeredityObjectss" type="tns:HeredityList" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrganDescriptObjectss" type="tns:OrganDescriptionList" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpecialObjectss" type="tns:SpecialList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BodyContent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Height" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bmi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HeightUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightUnit" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AllergiesList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetAllergiesList" type="tns:ArrayOfAllergies" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAllergies">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Allergies" nillable="true" type="tns:Allergies" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Allergies">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ChronicDiseaseList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetChronicDisease" type="tns:ArrayOfChronicDisease" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfChronicDisease">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ChronicDisease" nillable="true" type="tns:ChronicDisease" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ChronicDisease">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DiseaseRisksList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetDiseaseRisksList" type="tns:ArrayOfDiseaseRisks" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDiseaseRisks">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DiseaseRisks" nillable="true" type="tns:DiseaseRisks" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DiseaseRisks">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Level" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Risk" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Score" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FamilyHistoryList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetFamilyHistoryList" type="tns:ArrayOfFamilyHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFamilyHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FamilyHistory" nillable="true" type="tns:FamilyHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FamilyHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HeredityList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetHeredityList" type="tns:ArrayOfHeredity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHeredity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Heredity" nillable="true" type="tns:Heredity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Heredity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrganDescriptionList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetOrganDescriptionList" type="tns:ArrayOfOrganDescription" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrganDescription">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrganDescription" nillable="true" type="tns:OrganDescription" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrganDescription">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BodyFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SpecialList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetSpecialList" type="tns:ArrayOfSpecial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSpecial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Special" nillable="true" type="tns:Special" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Special">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetClinicRecordByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClinicRecordByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClinicRecordByIDResult" type="tns:ClinicRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClinicRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Userid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HospitalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HospitalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstVisit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDiagnosisListsByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDiagnosisListsByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDiagnosisListsByIDResult" type="tns:DiagnosisList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DiagnosisList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetOperatesList" type="tns:ArrayOfDiagnosis" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperateImageroot" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetDrugList" type="tns:ArrayOfDiagnosis" />
+          <s:element minOccurs="0" maxOccurs="1" name="DrugImageroot" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetInspectList" type="tns:ArrayOfDiagnosis" />
+          <s:element minOccurs="0" maxOccurs="1" name="InspectImageroot" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDiagnosis">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Diagnosis" nillable="true" type="tns:Diagnosis" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Diagnosis">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ComMedical">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Images" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Recordid" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SavePhysicalSignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:PhysicalSign" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PhysicalSign">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Medicare_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Identity_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Heart_rate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Blood_pressure__sp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Blood_pressure__dp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Blood_sugar" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Temperature" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Respiratory_rate" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vision" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Recorded_time" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShortDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShortTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bloodtype" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SavePhysicalSignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SavePhysicalSignInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhysicalSignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Identity_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ComBodyContentList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetComBodyContentList" type="tns:ArrayOfComBodyContent" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfComBodyContent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ComBodyContent" nillable="true" type="tns:ComBodyContent" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ComBodyContent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPhysicalSignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPhysicalSignInfoResult" type="tns:ComBodyContentList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhrPhysicalSignList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Identity_No" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PhrPhysicalSign">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BloodGlucose" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HeartRate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Height" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Temperature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodPressure" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Temperature_unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodGlucose_unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodPressure_unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Heart_rate_unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weight_unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Height_unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodPressuremin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Heightid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Wightid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Blood_sugarid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Heart_rateid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Blood_pressure_dpid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Blood_pressure_spid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bloodtypeid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Temperatureid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPhrPhysicalSign">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PhrPhysicalSign" nillable="true" type="tns:PhrPhysicalSign" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPhrPhysicalSignListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPhrPhysicalSignListResult" type="tns:ArrayOfPhrPhysicalSign" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelPhysicalSignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelPhysicalSignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelPhysicalSignInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Identification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identity_No" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdentificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdentificationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMedicalRecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMedicalRecords" />
+  </wsdl:message>
+  <wsdl:message name="GetMedicalRecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMedicalRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailMedicalRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDetailMedicalRecord" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailMedicalRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDetailMedicalRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDiseaseRecordRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDiseaseRecordRecord" />
+  </wsdl:message>
+  <wsdl:message name="SaveDiseaseRecordRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDiseaseRecordRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelDiseaseRecordRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:DelDiseaseRecordRecord" />
+  </wsdl:message>
+  <wsdl:message name="DelDiseaseRecordRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:DelDiseaseRecordRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRecordHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:SaveRecordHistory" />
+  </wsdl:message>
+  <wsdl:message name="SaveRecordHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:SaveRecordHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHomeInfoEntitysSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHomeInfoEntitys" />
+  </wsdl:message>
+  <wsdl:message name="GetHomeInfoEntitysSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHomeInfoEntitysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClinicRecordByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClinicRecordByID" />
+  </wsdl:message>
+  <wsdl:message name="GetClinicRecordByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClinicRecordByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDiagnosisListsByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDiagnosisListsByID" />
+  </wsdl:message>
+  <wsdl:message name="GetDiagnosisListsByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDiagnosisListsByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePhysicalSignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePhysicalSignInfo" />
+  </wsdl:message>
+  <wsdl:message name="SavePhysicalSignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePhysicalSignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPhysicalSignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPhysicalSignInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPhysicalSignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPhysicalSignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPhrPhysicalSignListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPhrPhysicalSignList" />
+  </wsdl:message>
+  <wsdl:message name="GetPhrPhysicalSignListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPhrPhysicalSignListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelPhysicalSignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DelPhysicalSignInfo" />
+  </wsdl:message>
+  <wsdl:message name="DelPhysicalSignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DelPhysicalSignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdentificationSoapIn">
+    <wsdl:part name="parameters" element="tns:Identification" />
+  </wsdl:message>
+  <wsdl:message name="IdentificationSoapOut">
+    <wsdl:part name="parameters" element="tns:IdentificationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HealthServiceSoap">
+    <wsdl:operation name="GetMedicalRecords">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取就诊信息列表</wsdl:documentation>
+      <wsdl:input message="tns:GetMedicalRecordsSoapIn" />
+      <wsdl:output message="tns:GetMedicalRecordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailMedicalRecord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取过敏史,遗传史,家族史,特殊情况,慢性病 4家族史 5遗传病 6过敏史 7慢性病 8特殊情况</wsdl:documentation>
+      <wsdl:input message="tns:GetDetailMedicalRecordSoapIn" />
+      <wsdl:output message="tns:GetDetailMedicalRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDiseaseRecordRecord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存就诊记录,返回主键</wsdl:documentation>
+      <wsdl:input message="tns:SaveDiseaseRecordRecordSoapIn" />
+      <wsdl:output message="tns:SaveDiseaseRecordRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDiseaseRecordRecord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除就诊记录</wsdl:documentation>
+      <wsdl:input message="tns:DelDiseaseRecordRecordSoapIn" />
+      <wsdl:output message="tns:DelDiseaseRecordRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRecordHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存就诊记录</wsdl:documentation>
+      <wsdl:input message="tns:SaveRecordHistorySoapIn" />
+      <wsdl:output message="tns:SaveRecordHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHomeInfoEntitys">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">1.获取首页8大块信息</wsdl:documentation>
+      <wsdl:input message="tns:GetHomeInfoEntitysSoapIn" />
+      <wsdl:output message="tns:GetHomeInfoEntitysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClinicRecordByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据主键获取就诊记录详细</wsdl:documentation>
+      <wsdl:input message="tns:GetClinicRecordByIDSoapIn" />
+      <wsdl:output message="tns:GetClinicRecordByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiagnosisListsByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据id 和类型 获取手术,检查,用药详细 1代表药品 2代表检查 3 代表手术</wsdl:documentation>
+      <wsdl:input message="tns:GetDiagnosisListsByIDSoapIn" />
+      <wsdl:output message="tns:GetDiagnosisListsByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePhysicalSignInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">[保存体征信息]1代表身高 2 代表体重 3代表体温,4代表心率,5代表血糖,6代表血压,7代表血型</wsdl:documentation>
+      <wsdl:input message="tns:SavePhysicalSignInfoSoapIn" />
+      <wsdl:output message="tns:SavePhysicalSignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhysicalSignInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">[获取体征部分信息]1代表身高 2 代表体重 3代表体温,4代表心率,5代表血糖,6代表血压</wsdl:documentation>
+      <wsdl:input message="tns:GetPhysicalSignInfoSoapIn" />
+      <wsdl:output message="tns:GetPhysicalSignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhrPhysicalSignList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取体征信息分页显示</wsdl:documentation>
+      <wsdl:input message="tns:GetPhrPhysicalSignListSoapIn" />
+      <wsdl:output message="tns:GetPhrPhysicalSignListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelPhysicalSignInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">[删除体征信息]</wsdl:documentation>
+      <wsdl:input message="tns:DelPhysicalSignInfoSoapIn" />
+      <wsdl:output message="tns:DelPhysicalSignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Identification">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">[用户身份信息认证接口]</wsdl:documentation>
+      <wsdl:input message="tns:IdentificationSoapIn" />
+      <wsdl:output message="tns:IdentificationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HealthServiceSoap" type="tns:HealthServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMedicalRecords">
+      <soap:operation soapAction="HealthApp/GetMedicalRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailMedicalRecord">
+      <soap:operation soapAction="HealthApp/GetDetailMedicalRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDiseaseRecordRecord">
+      <soap:operation soapAction="HealthApp/SaveDiseaseRecordRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelDiseaseRecordRecord">
+      <soap:operation soapAction="HealthApp/DelDiseaseRecordRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRecordHistory">
+      <soap:operation soapAction="HealthApp/SaveRecordHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHomeInfoEntitys">
+      <soap:operation soapAction="HealthApp/GetHomeInfoEntitys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClinicRecordByID">
+      <soap:operation soapAction="HealthApp/GetClinicRecordByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiagnosisListsByID">
+      <soap:operation soapAction="HealthApp/GetDiagnosisListsByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePhysicalSignInfo">
+      <soap:operation soapAction="HealthApp/SavePhysicalSignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhysicalSignInfo">
+      <soap:operation soapAction="HealthApp/GetPhysicalSignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhrPhysicalSignList">
+      <soap:operation soapAction="HealthApp/GetPhrPhysicalSignList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelPhysicalSignInfo">
+      <soap:operation soapAction="HealthApp/DelPhysicalSignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identification">
+      <soap:operation soapAction="HealthApp/Identification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HealthServiceSoap12" type="tns:HealthServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMedicalRecords">
+      <soap12:operation soapAction="HealthApp/GetMedicalRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailMedicalRecord">
+      <soap12:operation soapAction="HealthApp/GetDetailMedicalRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDiseaseRecordRecord">
+      <soap12:operation soapAction="HealthApp/SaveDiseaseRecordRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelDiseaseRecordRecord">
+      <soap12:operation soapAction="HealthApp/DelDiseaseRecordRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRecordHistory">
+      <soap12:operation soapAction="HealthApp/SaveRecordHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHomeInfoEntitys">
+      <soap12:operation soapAction="HealthApp/GetHomeInfoEntitys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClinicRecordByID">
+      <soap12:operation soapAction="HealthApp/GetClinicRecordByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiagnosisListsByID">
+      <soap12:operation soapAction="HealthApp/GetDiagnosisListsByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePhysicalSignInfo">
+      <soap12:operation soapAction="HealthApp/SavePhysicalSignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhysicalSignInfo">
+      <soap12:operation soapAction="HealthApp/GetPhysicalSignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhrPhysicalSignList">
+      <soap12:operation soapAction="HealthApp/GetPhrPhysicalSignList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelPhysicalSignInfo">
+      <soap12:operation soapAction="HealthApp/DelPhysicalSignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identification">
+      <soap12:operation soapAction="HealthApp/Identification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HealthService">
+    <wsdl:port name="HealthServiceSoap" binding="tns:HealthServiceSoap">
+      <soap:address location="http://10.117.130.142:8008/HealthService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HealthServiceSoap12" binding="tns:HealthServiceSoap12">
+      <soap12:address location="http://10.117.130.142:8008/HealthService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

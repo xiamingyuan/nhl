@@ -1,0 +1,67 @@
+.cell-center {
+    text-align: center;
+    font-weight: normal;
+}
+.cell-right {
+    text-align: right;
+    font-weight: normal;
+}
+/*.ui-grid-row:nth-child(odd):hover .ui-grid-cell{*/
+    /*background: #e6f0e2*/
+/*}*/
+/*.ui-grid-row:nth-child(even):hover .ui-grid-cell{*/
+    /*background:#e6f0e2*/
+/*}*/
+
+
+
+/* grid去左上角竖线 */
+.ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+    border-right: 0px;
+}
+
+
+
+.ui-grid div.ui-grid-cell input[type="checkbox"] {
+    margin: 9px 5px 0px 6px;
+}
+
+
+.ui-grid input[type="radio"], input[type="checkbox"] {
+    margin: 8px 0px 0px;
+}
+
+/*!*资讯管理中列表操作一栏启用停用切换错位*!*/
+.ui-grid-cell-contents .operate-a{
+    display: inline-block;
+    width:40px;
+    text-align: right;
+    height:22px;
+    line-height: 22px;
+    font-size: 12px;
+}
+.grid-oper-column i{
+    font-size: 12px;
+    display: inline-block;
+}
+.ui-grid-canvas {
+    border-bottom: solid 1px #f3f3f3;
+    /*padding-top: 0px;*/
+    margin-top: -1px;
+}
+
+.ui-grid-viewport {
+    z-index: 1000;
+}
+/*解决ie中左侧菜单被右侧表格遮挡问题*/
+.layout-domain .stretch{
+    z-index: 1000 !important;
+}
+/*grid元素可以选中*/
+.ui-grid-canvas .ui-grid-disable-selection{
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+}
